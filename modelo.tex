@@ -1,0 +1,171 @@
+\documentclass[11pt,portuguese]%{article}
+{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{lmodern}
+\usepackage{fourier}
+\usepackage{graphicx}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+
+%----------------------------------------------------------------------------------------
+%	TIKZ 
+%-------------------------------------------------------------------------------------
+\usepackage{tikz} % for diagrams
+\usepackage{tikz-3dplot}
+\usetikzlibrary{quotes,angles,patterns,external,fit,intersections,matrix,positioning,fadings,arrows,calc,decorations.pathmorphing,decorations.pathreplacing,shapes}
+
+\usepackage{tikz-cd}
+
+\tikzset{snake it/.style={-stealth,
+decoration={snake, 
+    amplitude = .4mm,
+    segment length = 2mm,
+    post length=0.9mm},decorate}}
+    \usepackage{pgfplots}
+
+%----------------------------------------------------------------------------------------
+%	AMBIENTES 
+%-------------------------------------------------------------------------------------
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{prop}[teo]{Proposição}
+\newtheorem{conjecture}[teo]{Conjectura}
+\newtheorem{coro}{Corolário}[teo]
+\newtheorem{defi}{Definição}[section]
+\theoremstyle{defi}
+\newcommand{\bdefi}{\begin{defi}}
+\newcommand{\edefi}{\end{defi}}
+\newcommand{\bprop}{\begin{prop}}
+\newcommand{\eprop}{\end{prop}}
+\renewcommand\qedsymbol{$\blacksquare$}
+\newtheorem{ex}{Exemplo}[section]
+\theoremstyle{ex}
+\newcommand{\bex}{\begin{ex}}
+\newcommand{\eex}{\end{ex}}
+
+\newcommand{\mais}{{\textsc{\footnotesize +}}}
+\newcommand{\menos}{{\textsc{\footnotesize $-$}}}
+
+%----------------------------------------------------------------------------------------
+%	MEUS COMANDOS 
+%-------------------------------------------------------------------------------------
+\newcommand{\id}{\mathbbmtt{1}}
+\newcommand{\ee}{\textbf{e}}
+\newcommand{\vv}{\textbf{v}}
+\newcommand{\uu}{\textbf{u}}
+\newcommand{\ww}{\textbf{w}}
+\newcommand{\nn}{\textbf{n}}
+\newcommand{\pp}{\textbf{p}}
+\newcommand{\xx}{\textbf{x}}
+\newcommand{\yy}{\textbf{y}}
+\newcommand{\zz}{\textbf{z}}
+\newcommand{\rr}{\textbf{r}}
+\newcommand{\kk}{\textbf{k}}
+\newcommand{\ttt}{\textbf{t}}
+\newcommand{\FF}{\textbf{F}}
+\newcommand{\XX}{\textbf{X}}
+\newcommand{\YY}{\textbf{Y}}
+\newcommand{\qqq}{\textbf{q}}
+\newcommand{\aaa}{\textbf{a}}
+\newcommand{\lep}{\left(}
+\newcommand{\rep}{\right)}
+\newcommand{\lec}{\left[}
+\newcommand{\rec}{\right]}
+
+%\DeclareMathOperator{\sech}{sech}
+%\DeclareMathOperator{\csch}{csch}
+%\DeclareMathOperator{\arcsec}{arcsec}
+%\DeclareMathOperator{\arccot}{arcCot}
+%\DeclareMathOperator{\arccsc}{arcCsc}
+%\DeclareMathOperator{\arccosh}{arcCosh}
+%\DeclareMathOperator{\arcsinh}{arcsinh}
+%\DeclareMathOperator{\arctanh}{arctanh}
+%\DeclareMathOperator{\arcsech}{arcsech}
+%\DeclareMathOperator{\arccsch}{arcCsch}
+%\DeclareMathOperator{\arccoth}{arcCoth}
+
+\numberwithin{equation}{section} %sets equation numbers .
+
+%\setcounter{tocdepth}{1} % Show sections
+%\setcounter{tocdepth}{2} % + subsections
+%\setcounter{tocdepth}{3} % + subsubsections
+%\setcounter{tocdepth}{4} % + paragraphs
+%\setcounter{tocdepth}{5} % + subparagraphs
+
+%----------------------------------------------------------------------------------------
+%	OUTROS PACOTES 
+%----------------------------------------------------------------------------------------
+
+\usepackage{cancel} % Cancelar termos em equações
+\usepackage{physics} % Pacote muito útil!!!
+\usepackage{natbib}
+\usepackage{bbm}
+\usepackage{enumitem} 
+\usepackage{cancel} %cancelar termos em equação
+\usepackage{tcolorbox} %quadro de destaque
+\usepackage{tikz-cd} %diagrama comutativo
+\usepackage{wrapfig}% texto contornando a figura
+\usepackage{subcaption} %multiplas figuras
+\usepackage{upgreek}
+\usepackage[auto-label]{exsheets}
+\usepackage{blindtext}  % texto mudo
+
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENTO
+%----------------------------------------------------------------------------------------
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	PRÉ-TEXTO
+%----------------------------------------------------------------------------------------
+
+%\renewcommand{\maketitlehookb}{\centering You won't expect the results}
+\title{Título\\ \vspace{.5cm}}
+\subtitle{(sub)\\ \vspace{.5cm} \noindent\rule{15cm}{1.4pt}\\ \vspace{2cm}}
+\author{Autor \\ \vspace{13cm}}
+\date{ano}
+
+%\pagenumbering{roman} %This command sets the page numbers to lowercase Roman numerals. 
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\pagenumbering{roman} %This command sets the page numbers to lowercase Roman numerals.
+
+\setlength\parindent{24pt}
+
+\tableofcontents %******************
+\newpage
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	CAPÍTULOS / SEÇÕES
+%----------------------------------------------------------------------------------------
+\thispagestyle{empty}
+\include{caps/intro} % Introdução
+
+\setcounter{page}{1} %This will manually set the page counter to 1 in this page, subsequent pages are numbered starting the count from this one. 
+
+\pagenumbering{arabic} %The page numbering is switched to Arabic, this will also restart the page counter. 
+
+\part{Fundamentos}
+
+\include{caps/cap1}   % capítulos
+
+\part{Aplicações}
+
+\include{caps/cap2}   % capítulos
+
+
+\end{document}
