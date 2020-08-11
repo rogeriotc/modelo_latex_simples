@@ -4,6 +4,6 @@
 
  Para facilitar a organização, os capítulos/seções/aulas são salvos em arquivos separados.
 
-Para clonar utilize este modelo utilize:
+Para clonar este modelo utilize:
 
  `git clone https://github.com/rogeriotc/modelo_latex_simples`
